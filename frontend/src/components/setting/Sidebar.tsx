@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useUser } from "../context/UserContext";
+import { useUser } from "../../context/UserContext";
 
 interface SidebarProps {
   onLogout: () => void;
@@ -9,7 +9,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { logout } = useUser();
+  const { user, logout } = useUser();
 
   const handleLogout = () => {
     logout();
@@ -28,9 +28,14 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
         <Link to="/players" className={`icon-btn ${location.pathname === "/players" ? "active" : ""}`} title="Players">
           👥
         </Link>
-        <Link to="/settings" className={`icon-btn ${location.pathname === "/settings" ? "active" : ""}`} title="Settings">
-          ⚙️
-        </Link>
+
+        {/* Show settings only for admin */}
+        {user?.role === "admin" && (
+          <Link to="/settings" className={`icon-btn ${location.pathname === "/settings" ? "active" : ""}`} title="Settings">
+            ⚙️
+          </Link>
+        )}
+
         <button onClick={handleLogout} className="icon-btn" title="Logout">
           🚪
         </button>

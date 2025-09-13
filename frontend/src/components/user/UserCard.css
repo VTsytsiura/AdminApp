@@ -1,0 +1,42 @@
+.uc_margin_0 {
+    margin: 0;
+}
+
+.line {
+    border-bottom: 1px solid;
+}
+
+.uc_header {
+    display: flex;
+    justify-content: center;
+}
+
+.uc_footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-direction: row;
+}
+
+.uc_input {
+    margin-left: 8px;
+    background-color: transparent;
+    color: black;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    height: 30px;
+    width: 300px;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.uc_table-container {
+    display: flex;
+    justify-content: center;
+}
+
+.us_label {
+    font-size: large;
+    font-weight: bold;
+}

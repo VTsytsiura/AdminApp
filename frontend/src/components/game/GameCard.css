@@ -1,0 +1,64 @@
+.game-card {
+  background: #252525;
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.game-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  background: #b9b9b9;
+  color: black;
+}
+.game-card:hover > .game-meta {
+    color: black;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.game-meta {
+    color: #555;
+}
+
+.game-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-avatar {
+  transform: scale(1.1);
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #555;
+}

@@ -1,9 +1,8 @@
-import SettingsTabset from "../components/SettingsTabset";
+import SettingsTabset from "../components/setting/SettingsTabset";
 
 const Settings = () => {
   return ( 
     <div>
-      <h2>⚙️ Settings </h2>
       <SettingsTabset />
     </div>
   );

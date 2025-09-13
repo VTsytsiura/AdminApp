@@ -1,4 +1,5 @@
 import React from "react";
+import "./GameCard.css";
 
 interface Game {
   id: number;

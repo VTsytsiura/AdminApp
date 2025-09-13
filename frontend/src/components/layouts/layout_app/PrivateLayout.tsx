@@ -1,7 +1,7 @@
 import React from "react";
 import { useUser } from "../../../context/UserContext";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../../Sidebar";
+import Sidebar from "../../setting/Sidebar";
 
 interface PrivateLayoutProps {
   children: React.ReactNode;

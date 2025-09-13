@@ -12,11 +12,12 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const { setUser } = useUser();
 
+  // ------------------ LOGIN ------------------
   async function handleSignin(username: string, password: string) {
     if (!username || !password) return;
 
     try {
-      const res = await fetch("http://localhost:4000/api/login", {
+      const res = await fetch("/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -29,13 +30,16 @@ const Login: React.FC = () => {
       }
 
       const data = await res.json();
-      console.log(JSON.stringify(data, null, 2));
-      
+
       saveToken(data.token);
+
       setUser({
         id: data.user.id,
         username: data.user.username,
         role: data.user.role,
+        first_name: data.user.first_name,
+        last_name: data.user.last_name,
+        email: data.user.email,
       });
 
       navigate("/", { replace: true });
@@ -45,9 +49,12 @@ const Login: React.FC = () => {
     }
   }
 
+  // ------------------ SIGNUP ------------------
   async function handleSignup(username: string, password: string, role = "user") {
+    if (!username || !password) return;
+
     try {
-      const res = await fetch("http://localhost:4000/api/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password, role }),
@@ -61,6 +68,7 @@ const Login: React.FC = () => {
 
       const data = await res.json();
       saveToken(data.token);
+
       setUser({
         id: data.user.id,
         username: data.user.username,

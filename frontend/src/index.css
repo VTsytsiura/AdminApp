@@ -44,9 +44,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #345d7ab9;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+button[data-variant="success"] {
+  background-color: rgb(98, 150, 98);
 }
 button:hover {
   border-color: #646cff;

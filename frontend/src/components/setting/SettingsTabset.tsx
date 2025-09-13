@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import AccountSettings from "./AccountSettings";
+import UsersSettings from "./UsersSettings";
+import Privacy from "../privacy/Privacy";
 
 const tabs = ["Account", "Users", "Privacy"] as const;
 
@@ -22,13 +24,8 @@ const SettingsTabset: React.FC = () => {
 
       <div className="tab-content">
         {activeTab === "Account" && <AccountSettings />}
-        {activeTab === "Users" && <div>
-            <p>👥 User management content...</p>
-        </div>}
-        {activeTab === "Privacy" && 
-        <div>
-            <p>© 2025 Game Dashboard. All rights reserved.</p>
-        </div>}
+        {activeTab === "Users" && <UsersSettings />}
+        {activeTab === "Privacy" && <Privacy />}
       </div>
     </div>
   );
